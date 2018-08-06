@@ -20,4 +20,26 @@ public class CategoryServiceImpl implements ICategoryService {
     public List<Category> list() {
         return categoryMapper.list();
     }
+
+    @Override
+    public void addCategory(Category category) {
+        categoryMapper.add(category);
+    }
+
+    @Override
+    public void deleteCategory(int id) {
+        categoryMapper.delete(id);
+    }
+
+
+    @Override
+    public Category editCategory(int id){
+        return  categoryMapper.edit(id);
+    }
+
+
+    @Override
+    public void updateCategory(Category category) {
+        categoryMapper.update(category);
+    }
 }
