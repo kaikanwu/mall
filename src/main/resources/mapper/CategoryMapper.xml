@@ -21,7 +21,7 @@
     </select>
 
     <update id="update" parameterType="Category">
-        UPDATE category SET name = #{name} where id={#id}
+        UPDATE category SET name=#{name} WHERE id=#{id}
     </update>
 
 </mapper>
