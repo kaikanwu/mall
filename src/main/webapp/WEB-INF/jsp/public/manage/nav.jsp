@@ -13,7 +13,7 @@
 <body>
     <div id="nav">
         <nav class="navbar navbar-light"  >
-            <a class="navbar-brand" href="list">Backend</a>
+            <a class="navbar-brand" href="list">Backend Management</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

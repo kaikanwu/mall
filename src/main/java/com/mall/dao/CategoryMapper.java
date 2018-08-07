@@ -1,18 +1,21 @@
 package com.mall.dao;
 
 import com.mall.pojo.Category;
-
+import com.mall.pojo.CategoryExample;
 import java.util.List;
 
 public interface CategoryMapper {
+    int deleteByPrimaryKey(Integer id);
 
-    List<Category> list();
+    int insert(Category record);
 
-    void add(Category category);
+    int insertSelective(Category record);
 
-    void delete(int id);
+    List<Category> selectByExample(CategoryExample example);
 
-    Category edit(int id);
+    Category selectByPrimaryKey(Integer id);
 
-    void update(Category category);
+    int updateByPrimaryKeySelective(Category record);
+
+    int updateByPrimaryKey(Category record);
 }

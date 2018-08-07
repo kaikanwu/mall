@@ -2,6 +2,7 @@ package com.mall.service.impl;
 
 import com.mall.dao.CategoryMapper;
 import com.mall.pojo.Category;
+import com.mall.pojo.CategoryExample;
 import com.mall.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,28 +19,30 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public List<Category> list() {
-        return categoryMapper.list();
+        CategoryExample categoryExample = new CategoryExample();
+        categoryExample.setOrderByClause("id desc");
+        return categoryMapper.selectByExample(categoryExample);
     }
 
     @Override
     public void addCategory(Category category) {
-        categoryMapper.add(category);
+        categoryMapper.insert(category);
     }
 
     @Override
     public void deleteCategory(int id) {
-        categoryMapper.delete(id);
+        categoryMapper.deleteByPrimaryKey(id);
     }
 
 
     @Override
     public Category editCategory(int id){
-        return  categoryMapper.edit(id);
+        return categoryMapper.selectByPrimaryKey(id);
     }
 
 
     @Override
     public void updateCategory(Category category) {
-        categoryMapper.update(category);
+        categoryMapper.updateByPrimaryKeySelective(category);
     }
 }
