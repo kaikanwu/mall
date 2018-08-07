@@ -9,15 +9,27 @@ public class Product {
 
     private String subTitle;
 
-    private Float originalPrice;
-
-    private Float promotePrice;
+    private Float price;
 
     private Integer stock;
 
     private Integer cid;
 
     private Date createDate;
+
+
+    /**
+     * add Category class here
+     */
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Integer getId() {
         return id;
@@ -43,20 +55,12 @@ public class Product {
         this.subTitle = subTitle == null ? null : subTitle.trim();
     }
 
-    public Float getOriginalPrice() {
-        return originalPrice;
+    public Float getPrice() {
+        return price;
     }
 
-    public void setOriginalPrice(Float originalPrice) {
-        this.originalPrice = originalPrice;
-    }
-
-    public Float getPromotePrice() {
-        return promotePrice;
-    }
-
-    public void setPromotePrice(Float promotePrice) {
-        this.promotePrice = promotePrice;
+    public void setPrice(Float price) {
+        this.price = price;
     }
 
     public Integer getStock() {
