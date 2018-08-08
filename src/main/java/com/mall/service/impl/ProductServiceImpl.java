@@ -89,11 +89,27 @@ public class ProductServiceImpl implements IProductService {
         }
     }
 
+    @Override
+    public void fill(List<Category> categoryList) {
+        for (Category category : categoryList) {
+            fill(category);
+        }
+    }
+
+    @Override
+    public void fill(Category category) {
+        List<Product> productList = list(category.getId());
+        category.setProducts(productList);
+    }
+
+
+
     public void setFirstProductImage(List<Product> productList) {
         for (Product product : productList) {
             setFirstProductImage(product);
         }
     }
+
 
 
 

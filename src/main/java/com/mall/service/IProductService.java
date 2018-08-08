@@ -1,5 +1,6 @@
 package com.mall.service;
 
+import com.mall.pojo.Category;
 import com.mall.pojo.Product;
 
 import java.util.List;
@@ -17,5 +18,12 @@ public interface IProductService {
     List<Product> list(int cid);
 
     void setFirstProductImage(Product product);
+
+
+    void fill(List<Category> categoryList);
+
+    void fill(Category category);
+
+
 
 }
