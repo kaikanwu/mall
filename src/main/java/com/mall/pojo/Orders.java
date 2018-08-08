@@ -1,6 +1,7 @@
 package com.mall.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Orders {
     private Integer id;
@@ -26,6 +27,46 @@ public class Orders {
     private Integer uid;
 
     private String status;
+
+
+    private List<OrderItem> orderItemList;
+    private  User user;
+
+    private float totalPrices;
+
+    private int itemNumber;
+
+    public List<OrderItem> getOrderItemList() {
+        return orderItemList;
+    }
+
+    public void setOrderItemList(List<OrderItem> orderItemList) {
+        this.orderItemList = orderItemList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public float getTotalPrices() {
+        return totalPrices;
+    }
+
+    public void setTotalPrices(float totalPrices) {
+        this.totalPrices = totalPrices;
+    }
+
+    public int getItemNumber() {
+        return itemNumber;
+    }
+
+    public void setItemNumber(int itemNumber) {
+        this.itemNumber = itemNumber;
+    }
 
     public Integer getId() {
         return id;

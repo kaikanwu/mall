@@ -49,7 +49,7 @@
                         <td>${p.name}</td>
                         <td>${p.subTitle}</td>
                         <td>
-                           
+
                             <c:if test="${!empty p.firstProductImage}">
 
                                 <img width="40px" src="img/firstImage/${p.firstProductImage.id}.jpg">
