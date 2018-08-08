@@ -5,7 +5,9 @@ import com.mall.dao.ProductMapper;
 import com.mall.pojo.Category;
 import com.mall.pojo.Product;
 import com.mall.pojo.ProductExample;
+import com.mall.pojo.ProductImage;
 import com.mall.service.ICategoryService;
+import com.mall.service.IProductImageService;
 import com.mall.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,9 @@ public class ProductServiceImpl implements IProductService {
     @Autowired
     private ProductMapper productMapper;
 
+    @Autowired
+    private IProductImageService iProductImageService;
+
     @Override
     public void addProduct(Product product) {
         productMapper.insert(product);
@@ -34,6 +39,8 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public Product getProduct(int id) {
         Product product = productMapper.selectByPrimaryKey(id);
+
+        setFirstProductImage(product);
         setCategory(product);
         return product;
     }
@@ -50,6 +57,8 @@ public class ProductServiceImpl implements IProductService {
         productExample.setOrderByClause("id desc");
         List productList = productMapper.selectByExample(productExample);
         setCategory(productList);
+
+        setFirstProductImage(productList);
         return productList;
     }
 
@@ -69,6 +78,24 @@ public class ProductServiceImpl implements IProductService {
             setCategory(product);
         }
     }
+
+
+    @Override
+    public void setFirstProductImage(Product product) {
+        List<ProductImage> productImageList = iProductImageService.list(product.getId(), IProductImageService.firstImage);
+        if (!productImageList.isEmpty()) {
+            ProductImage productImage = productImageList.get(0);
+            product.setFirstProductImage(productImage);
+        }
+    }
+
+    public void setFirstProductImage(List<Product> productList) {
+        for (Product product : productList) {
+            setFirstProductImage(product);
+        }
+    }
+
+
 
 
 }

@@ -26,11 +26,6 @@
     <body>
         <div class="workingArea">
 
-            <%--<ol class="breadcrumb">--%>
-                <%--<li><a href="list">Category</a></li>--%>
-                <%--<li class="active">编辑分类</li>--%>
-            <%--</ol>--%>
-
 
 
             <div class="panel panel-warning addDiv"  align="center" >

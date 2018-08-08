@@ -48,13 +48,18 @@
                         <td>${p.id}</td>
                         <td>${p.name}</td>
                         <td>${p.subTitle}</td>
+                        <td>
+                           
+                            <c:if test="${!empty p.firstProductImage}">
 
-                        <%--TODO display picture here--%>
-                        <td>Picture here</td>
+                                <img width="40px" src="img/firstImage/${p.firstProductImage.id}.jpg">
+                            </c:if>
+
+                        </td>
 
                         <td>${p.price}</td>
                         <td>${p.stock}</td>
-                        <td><i class="fas fa-cog"></i></td>
+                        <td><a href="productImageList?pid=${p.id}"><i class="fas fa-cog"></i></a> </td>
                         <td><a href="editProduct?id=${p.id}"><i class="fas fa-edit"></i></a></td>
                         <td><a deleteLink="true" href="deleteProduct?id=${p.id}"><i class="fas fa-trash-alt"></i></a></td>
 
@@ -75,7 +80,7 @@
             <div class="panel-heading">Add A New Product</div>
             <div class="panel-body">
                 <form method="post" id="addForm" action="addProduct" enctype="multipart/form-data">
-                    <table id="addCategoryTable">
+                    <table id="addProductTable">
                         <tr>
                             <td>Product Name</td>
                             <td><input  id="name" name="name" type="text" class="form-control"></td>
