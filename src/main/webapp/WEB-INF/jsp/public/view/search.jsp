@@ -13,6 +13,7 @@
 <body>
 <br>
 <div class="search" method= "post" align="center">
+
     <div class="searchDiv">
         <input name= "keyword" type="text" placeholder="Search for...">
         <button type="submit" class="searchButton">go</button>
