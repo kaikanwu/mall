@@ -12,9 +12,9 @@ public class PageController {
         return "view/registerPage";
     }
 
-    @RequestMapping("registerSuccessPage")
+    @RequestMapping("registerFinishPage")
     public String registerSuccessPage(){
-        return "view/registerSuccessPage";
+        return "view/registerFinishPage";
     }
 
 

@@ -46,4 +46,18 @@ public class UserServiceImpl implements IUserService {
 
         return userMapper.selectByExample(userExample);
     }
+
+
+    @Override
+    public boolean checkUsername(String name) {
+
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andNameEqualTo(name);
+        List<User> userList = userMapper.selectByExample(userExample);
+
+        if (userList.isEmpty())
+            return false;
+        return true;
+
+    }
 }

@@ -14,4 +14,6 @@ public interface IUserService {
     void update(User user);
 
     List list();
+
+    boolean checkUsername(String name);
 }

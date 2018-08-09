@@ -42,26 +42,55 @@
 
 <br>
 
-<div align="center" >
-    <form class="registerForm"  >
-        <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-
-        <%--<div class="form-group form-check">--%>
-            <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
-            <%--<label class="form-check-label" for="exampleCheck1">Check me out</label>--%>
+<%--<div align="center" >--%>
+    <%--<form class="registerForm"    >--%>
+        <%--<div class="form-group">--%>
+            <%--<label >Username</label>--%>
+            <%--&lt;%&ndash;<input  id="name" name="name" placeholder="Enter Username">&ndash;%&gt;--%>
         <%--</div>--%>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
 
+        <%--<div class="form-group">--%>
+            <%--<label >Password</label>--%>
+            <%--&lt;%&ndash;<input type="password" id="password" name="password" placeholder="Password">&ndash;%&gt;--%>
+        <%--</div>--%>
+
+        <%--&lt;%&ndash;<div class="form-group form-check">&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<input type="checkbox" class="form-check-input" id="exampleCheck1">&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<label class="form-check-label" for="exampleCheck1">Check me out</label>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+        <%--<a href="registerFinishPage.jsp"> <button type="submit" class="btn btn-primary">Submit</button></a>--%>
+
+    <%--</form>--%>
+<%--</div>--%>
+
+
+<form method="post" action="registerCheck">
+    <div>
+
+    </div>
+
+    <table align="center">
+        <tr><td>Username</td></tr>
+        <tr>
+
+            <td><input id="name" name="name" placeholder="Enter Username"></td>
+        </tr>
+
+        <tr><td>Password</td></tr>
+        <tr>
+            <td><input type="password" id="password" name="password" placeholder="Password" ></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="registerFinishPage.jsp"> <button type="submit" class="btn btn-primary">Submit</button></a>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</form>
 
 </body>
 </html>
