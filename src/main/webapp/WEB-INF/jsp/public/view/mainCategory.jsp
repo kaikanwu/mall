@@ -32,8 +32,8 @@
             <c:forEach items="${c.products}" var="p" varStatus="st">
                 <c:if test="${st.count<=3}">
                     <div class="productItem" >
-                        <a href="foreproduct?pid=${p.id}"><img width="100px" src="img/firstImage/${p.firstProductImage.id}.jpg"></a>
-                        <a class="productItemDescLink" href="foreproduct?pid=${p.id}">
+                        <a href="viewProduct?pid=${p.id}"><img width="100px" src="img/firstImage/${p.firstProductImage.id}.jpg"></a>
+                        <a class="productItemDescLink" href="viewProduct?pid=${p.id}">
                                     <span class="productItemDesc">
                                             ${p.name}
                                     </span>

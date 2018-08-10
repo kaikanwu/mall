@@ -22,4 +22,6 @@ public interface IOrderItemService {
 
 
     void fill(Orders orders);
+
+    List<OrderItem> listByUser(int uid);
 }

@@ -1,6 +1,7 @@
 package com.mall.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Product {
     private Integer id;
@@ -23,6 +24,25 @@ public class Product {
      */
     private Category category;
 
+    private List<ProductImage> firstProductImageList;
+
+    private List<ProductImage> detailProductImageList;
+
+    public List<ProductImage> getFirstProductImageList() {
+        return firstProductImageList;
+    }
+
+    public void setFirstProductImageList(List<ProductImage> firstProductImageList) {
+        this.firstProductImageList = firstProductImageList;
+    }
+
+    public List<ProductImage> getDetailProductImageList() {
+        return detailProductImageList;
+    }
+
+    public void setDetailProductImageList(List<ProductImage> detailProductImageList) {
+        this.detailProductImageList = detailProductImageList;
+    }
 
     private ProductImage firstProductImage;
 

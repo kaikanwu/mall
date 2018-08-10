@@ -86,6 +86,15 @@ public class OrderItemServiceImpl implements IOrderItemService {
         orders.setOrderItemList(orderItemList);
     }
 
+    @Override
+    public List<OrderItem> listByUser(int uid) {
+
+        OrderItemExample orderItemExample = new OrderItemExample();
+        orderItemExample.createCriteria().andUidEqualTo(uid).andOidIsNull();
+        List<OrderItem> orderItemList = orderItemMapper.selectByExample(orderItemExample);
+        setProduct(orderItemList);
+        return null;
+    }
 
 
     public void setProduct(List<OrderItem> orderItemList){
@@ -98,4 +107,7 @@ public class OrderItemServiceImpl implements IOrderItemService {
         Product product = iProductService.getProduct(orderItem.getPid());
         orderItem.setProduct(product);
     }
+
+
+
 }

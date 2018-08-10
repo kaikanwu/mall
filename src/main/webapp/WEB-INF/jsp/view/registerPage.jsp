@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 <html>
 <head>
     <title>Register Page</title>
@@ -17,6 +19,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
+    <script>
+        $(function(){
+
+
+            <c:if test="${!empty message}">
+            alert("${message}");
+
+            </c:if>
+
+        })
+
+    </script>
 </head>
 <body>
 
@@ -65,31 +79,23 @@
 
 
 <form method="post" action="registerCheck">
-    <div>
-
-    </div>
 
     <table align="center">
         <tr><td>Username</td></tr>
         <tr>
 
-            <td><input id="name" name="name" placeholder="Enter Username"></td>
+            <td><input id="name" name="name"  class="form-control" placeholder=""></td>
         </tr>
-
         <tr><td>Password</td></tr>
         <tr>
-            <td><input type="password" id="password" name="password" placeholder="Password" ></td>
+            <td><input type="password" id="password" name="password" class="form-control" placeholder="" ></td>
         </tr>
         <tr>
             <td>
                 <a href="registerFinishPage.jsp"> <button type="submit" class="btn btn-primary">Submit</button></a>
-
             </td>
-
         </tr>
-
     </table>
-
 </form>
 
 </body>

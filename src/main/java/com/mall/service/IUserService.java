@@ -16,4 +16,7 @@ public interface IUserService {
     List list();
 
     boolean checkUsername(String name);
+
+    //for check user
+    User checkLogin(String username, String password);
 }

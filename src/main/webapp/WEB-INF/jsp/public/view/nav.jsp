@@ -29,14 +29,30 @@
 
         <div  class="justify-content-end">
 
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="loginPage">SIGN IN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="registerPage">SIGN UP</a>
-                </li>
-            </ul>
+
+
+            <c:if test="${!empty user}">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">${user.name}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout">Log Out</a>
+                    </li>
+                </ul>
+            </c:if>
+
+            <c:if test="${empty user}">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="loginPage">SIGN IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registerPage">SIGN UP</a>
+                    </li>
+                </ul>
+            </c:if>
+
 
         </div>
     </div>

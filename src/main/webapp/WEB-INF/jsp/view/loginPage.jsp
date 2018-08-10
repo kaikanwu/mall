@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Login Page</title>
@@ -16,8 +17,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        $(function(){
+
+
+            <c:if test="${!empty message}">
+            alert("${message}");
+
+            </c:if>
+
+        })
+
+    </script>
 </head>
 <body>
+
+
+
 
 
 
@@ -33,7 +50,6 @@
                 <li class="nav-item  active">
                     <a class="nav-link" href="loginPage">Sign In </a><span class="sr-only">(current)</span>
                 </li>
-
             </ul>
 
         </div>
@@ -42,26 +58,25 @@
 
 
 
+    <form method="post" action="loginCheck">
 
-    <div align="center">
-        <form class="loginForm">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
+        <table align="center">
+            <tr><td>Username</td></tr>
+            <tr>
 
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-
-            <%--<div class="form-group form-check">--%>
-                <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
-                <%--<label class="form-check-label" for="exampleCheck1">Check me out</label>--%>
-            <%--</div>--%>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+                <td><input id="username" name="username"  class="form-control" placeholder=""></td>
+            </tr>
+            <tr><td>Password</td></tr>
+            <tr>
+                <td><input type="password" id="password" name="password"   class="form-control" placeholder="" ></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="registerFinishPage.jsp"> <button type="submit" class="btn btn-primary">Submit</button></a>
+                </td>
+            </tr>
+        </table>
+    </form>
 
 </body>
 </html>

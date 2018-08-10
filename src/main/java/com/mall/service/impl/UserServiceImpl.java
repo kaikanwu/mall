@@ -60,4 +60,19 @@ public class UserServiceImpl implements IUserService {
         return true;
 
     }
+
+    @Override
+    public User checkLogin(String username, String password) {
+
+        UserExample userExample = new UserExample();
+
+        userExample.createCriteria().andNameEqualTo(username).andPasswordEqualTo(password);
+        List<User> userList = userMapper.selectByExample(userExample);
+        if (userList.isEmpty()) {
+            return null;
+        }
+
+        return userList.get(0);
+    }
+
 }
