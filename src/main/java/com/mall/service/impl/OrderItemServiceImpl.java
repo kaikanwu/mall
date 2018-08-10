@@ -93,7 +93,7 @@ public class OrderItemServiceImpl implements IOrderItemService {
         orderItemExample.createCriteria().andUidEqualTo(uid).andOidIsNull();
         List<OrderItem> orderItemList = orderItemMapper.selectByExample(orderItemExample);
         setProduct(orderItemList);
-        return null;
+        return orderItemList;
     }
 
 

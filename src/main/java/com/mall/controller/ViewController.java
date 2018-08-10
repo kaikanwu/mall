@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -111,9 +112,10 @@ public class ViewController {
 
 
     @RequestMapping("buyProduct")
-    public String buyProduct(HttpSession session, int pid, int number){
-        Product product = iProductService.getProduct(pid);
+    public String buyProduct(HttpSession session, int pid){
 
+        int number =1;
+        Product product = iProductService.getProduct(pid);
         int orderItemId = 0;
 
         User user = (User)session.getAttribute("user");
@@ -121,8 +123,7 @@ public class ViewController {
         List<OrderItem> orderItemList = iOrderItemService.listByUser(user.getId());
 
         for (OrderItem orderItem : orderItemList) {
-
-            if (orderItem.getProduct().getId().intValue() == product.getId().intValue()){
+            if (orderItem.getProduct().getId().intValue()==product.getId().intValue()){
                 orderItem.setNumber(orderItem.getNumber() + number);
                 iOrderItemService.update(orderItem);
                 found = true;
@@ -130,7 +131,6 @@ public class ViewController {
                 break;
             }
         }
-
         if (!found) {
             OrderItem orderItem = new OrderItem();
             orderItem.setUid(user.getId());
@@ -138,14 +138,27 @@ public class ViewController {
             orderItem.setPid(pid);
             iOrderItemService.add(orderItem);
             orderItemId = orderItem.getId();
-
         }
-
-        return "redirect:viewBuy?orderItemId=" + orderItemId;
-
-
+        return "redirect:settlement?orderItemId=" + orderItemId;
     }
 
+
+    @RequestMapping("settlement")
+    public String settlement(HttpSession session, Model model, String[] orderItemId) {
+
+        List<OrderItem> orderItemList = new ArrayList<>();
+        float totalPrice =0;
+        for (String stringid : orderItemId) {
+            int id = Integer.parseInt(stringid);
+            OrderItem orderItem = iOrderItemService.get(id);
+            totalPrice += orderItem.getProduct().getPrice()*orderItem.getNumber();
+            orderItemList.add(orderItem);
+        }
+
+        session.setAttribute("orderItemList", orderItemList);
+        model.addAttribute("totalPrice", totalPrice);
+        return "view/settlement";
+    }
 
 
 

@@ -18,6 +18,46 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+
+        <script>
+            <%--$(function(){--%>
+                <%--var stock = ${product.stock};--%>
+                <%--$(".custom-select").keyup(function(){--%>
+                    <%--var number= $(".custom-select").val();--%>
+                    <%--number = parseInt(number);--%>
+                    <%--if(isNaN(number))--%>
+                        <%--number= 1;--%>
+                    <%--if(number<=0)--%>
+                        <%--number = 1;--%>
+                    <%--if(number>stock)--%>
+                        <%--number = stock;--%>
+                    <%--$(".custom-select").val(number);--%>
+                <%--});--%>
+
+
+
+
+
+
+
+
+
+                <%--$(".buyLink").click(function(){--%>
+                    <%--$.get(--%>
+
+                        <%--function(){--%>
+
+                                <%--var num = $(".custom-select").val();--%>
+                                <%--location.href= $(".buyLink").attr("href")+"&num="+num;--%>
+
+                        <%--}--%>
+                    <%--);--%>
+                    <%--return false;--%>
+                <%--});--%>
+
+
+            <%--});--%>
+        </script>
     </head>
     <body>
 
@@ -57,7 +97,7 @@
 
             <div id="selectForm" class="productNumber" style="width: 79px;">
                 <span>Quantity</span>
-                <select class="custom-select" id="number" name="number"  >
+                <select class="custom-select"   >
                     <option selected value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -80,7 +120,7 @@
                 <c:if test="${!empty user}">
 
                     <div class="buyDiv">
-                        <a class="buyLink" href="buyProduct?pid=${product.id}&number"><button class="btn btn-primary" type="button">Buy</button></a>
+                        <a class="buyLink" href="buyProduct?pid=${product.id}"><button class="btn btn-primary" type="button">Buy</button></a>
 
                         <a href="homepage" class="addCartLink"><button  class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter"  ><i class="fas fa-shopping-cart"></i>Add to cart</button></a>
 
@@ -89,7 +129,7 @@
 
                 <c:if test="${empty user}">
                     <div class="buyDiv">
-                        <a class="buyLink" ><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter" >Buy</button></a>
+                        <a ><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter" >Buy</button></a>
                         <a  class="addCartLink"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter"  ><i class="fas fa-shopping-cart"></i>Add to cart</button></a>
                     </div>
                 </c:if>
@@ -103,9 +143,6 @@
 
 
 
-    <%--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">--%>
-        <%--Launch demo modal--%>
-    <%--</button>--%>
 
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
