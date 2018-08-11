@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpSession;
@@ -161,6 +162,34 @@ public class ViewController {
     }
 
 
+    @RequestMapping("addCart")
+    @ResponseBody
+    public String addCart(HttpSession session, int pid, Model model) {
+        int number =1 ;
+        Product product = iProductService.getProduct(pid);
+        User user = (User)session.getAttribute("user");
+        boolean found =false;
+        List<OrderItem> orderItemList = iOrderItemService.listByUser(user.getId());
+
+        for (OrderItem orderItem : orderItemList) {
+            if (orderItem.getProduct().getId().intValue()==product.getId().intValue()){
+                orderItem.setNumber(orderItem.getNumber() + number);
+                iOrderItemService.update(orderItem);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            OrderItem orderItem = new OrderItem();
+            orderItem.setUid(user.getId());
+            orderItem.setNumber(number);
+            orderItem.setPid(pid);
+            iOrderItemService.add(orderItem);
+
+        }
+        return "done";
+
+    }
 
 
 

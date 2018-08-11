@@ -19,45 +19,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
 
-        <script>
-            <%--$(function(){--%>
-                <%--var stock = ${product.stock};--%>
-                <%--$(".custom-select").keyup(function(){--%>
-                    <%--var number= $(".custom-select").val();--%>
-                    <%--number = parseInt(number);--%>
-                    <%--if(isNaN(number))--%>
-                        <%--number= 1;--%>
-                    <%--if(number<=0)--%>
-                        <%--number = 1;--%>
-                    <%--if(number>stock)--%>
-                        <%--number = stock;--%>
-                    <%--$(".custom-select").val(number);--%>
-                <%--});--%>
 
-
-
-
-
-
-
-
-
-                <%--$(".buyLink").click(function(){--%>
-                    <%--$.get(--%>
-
-                        <%--function(){--%>
-
-                                <%--var num = $(".custom-select").val();--%>
-                                <%--location.href= $(".buyLink").attr("href")+"&num="+num;--%>
-
-                        <%--}--%>
-                    <%--);--%>
-                    <%--return false;--%>
-                <%--});--%>
-
-
-            <%--});--%>
-        </script>
     </head>
     <body>
 
@@ -122,7 +84,7 @@
                     <div class="buyDiv">
                         <a class="buyLink" href="buyProduct?pid=${product.id}"><button class="btn btn-primary" type="button">Buy</button></a>
 
-                        <a href="homepage" class="addCartLink"><button  class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter"  ><i class="fas fa-shopping-cart"></i>Add to cart</button></a>
+                        <%--<a href="#nowhere" class="addCartLink"><button  class="btn btn-primary addCartButton" type="button"   ><i class="fas fa-shopping-cart"></i>Add to cart</button></a>--%>
 
                     </div>
                 </c:if>
@@ -130,7 +92,7 @@
                 <c:if test="${empty user}">
                     <div class="buyDiv">
                         <a ><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter" >Buy</button></a>
-                        <a  class="addCartLink"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter"  ><i class="fas fa-shopping-cart"></i>Add to cart</button></a>
+                        <%--<a  class="addCartLink"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter"  ><i class="fas fa-shopping-cart"></i>Add to cart</button></a>--%>
                     </div>
                 </c:if>
 
@@ -154,7 +116,7 @@
                         </button>
                     </div>
 
-                    <div class="modal-body" >
+                    <div class="modal-body" style="font-size: 28px" >
 
                         Please login first!
                     </div>

@@ -81,7 +81,7 @@
 
             <div class="modal-body" style="font-size: 25px" >
 
-                You have pay it successfully!
+                You have paid it successfully!
             </div>
 
 
