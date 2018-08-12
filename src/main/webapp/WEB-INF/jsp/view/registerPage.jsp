@@ -56,26 +56,6 @@
 
 <br>
 
-<%--<div align="center" >--%>
-    <%--<form class="registerForm"    >--%>
-        <%--<div class="form-group">--%>
-            <%--<label >Username</label>--%>
-            <%--&lt;%&ndash;<input  id="name" name="name" placeholder="Enter Username">&ndash;%&gt;--%>
-        <%--</div>--%>
-
-        <%--<div class="form-group">--%>
-            <%--<label >Password</label>--%>
-            <%--&lt;%&ndash;<input type="password" id="password" name="password" placeholder="Password">&ndash;%&gt;--%>
-        <%--</div>--%>
-
-        <%--&lt;%&ndash;<div class="form-group form-check">&ndash;%&gt;--%>
-            <%--&lt;%&ndash;<input type="checkbox" class="form-check-input" id="exampleCheck1">&ndash;%&gt;--%>
-            <%--&lt;%&ndash;<label class="form-check-label" for="exampleCheck1">Check me out</label>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--<a href="registerFinishPage.jsp"> <button type="submit" class="btn btn-primary">Submit</button></a>--%>
-
-    <%--</form>--%>
-<%--</div>--%>
 
 
 <form method="post" action="registerCheck">
