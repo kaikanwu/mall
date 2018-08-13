@@ -23,7 +23,6 @@
 </head>
 <body>
 <%@ include file="../public/view/nav.jsp"%>
-<%@ include file="../public/view/search.jsp"%>
 <%@ include file="../public/view/carousel.jsp"%>
 <%@ include file="../public/view/mainCategory.jsp"%>
 

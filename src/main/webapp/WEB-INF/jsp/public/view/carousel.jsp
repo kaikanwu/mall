@@ -4,6 +4,7 @@
   Date: 2018/8/8
   Time: 16:35
   To change this template use File | Settings | File Templates.
+  // all the photoes are from xiaomi official website.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
