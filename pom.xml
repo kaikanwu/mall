@@ -38,6 +38,7 @@
   </properties>
 
   <dependencies>
+    <!--java test library-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
