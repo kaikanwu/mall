@@ -22,9 +22,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="homepage">HOME<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list">Backend </a>
-            </li>
+            <%--<li class="nav-item">--%>
+                <%--<a class="nav-link" href="list">Backend </a>--%>
+            <%--</li>--%>
         </ul>
 
         <div  class="justify-content-end">
