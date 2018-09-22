@@ -1,6 +1,6 @@
 ### :dart:Introduction
 
-This is the project for my dissertation in UOG.
+This is the project in UOG.
 This project is divided by front-end and back-end.
 
 
